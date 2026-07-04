@@ -113,7 +113,7 @@ print(item)
 #
 # student.py
 # teacher.py
-# __init__.py
+# find_id_name.py
 #
 # Import package into another file.
 #

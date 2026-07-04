@@ -1,0 +1,31 @@
+# | Operation                         | Command                                            | Description                                                |
+# | --------------------------------- | -------------------------------------------------- | ---------------------------------------------------------- |
+# | Open Browser                      | `driver = webdriver.Chrome()`                      | Launches the Chrome browser.                               |
+# | Open URL                          | `driver.get("https://example.com")`                | Navigates to a website.                                    |
+# | Maximize Window                   | `driver.maximize_window()`                         | Maximizes the browser window.                              |
+# | Minimize Window                   | `driver.minimize_window()`                         | Minimizes the browser window.                              |
+# | Fullscreen Window                 | `driver.fullscreen_window()`                       | Opens the browser in fullscreen mode.                      |
+# | Get Current URL                   | `driver.current_url`                               | Returns the current page URL.                              |
+# | Get Page Title                    | `driver.title`                                     | Returns the title of the webpage.                          |
+# | Get Page Source                   | `driver.page_source`                               | Returns the HTML source code.                              |
+# | Refresh Page                      | `driver.refresh()`                                 | Refreshes the current page.                                |
+# | Go Back                           | `driver.back()`                                    | Navigates to the previous page.                            |
+# | Go Forward                        | `driver.forward()`                                 | Navigates to the next page.                                |
+# | Close Current Tab                 | `driver.close()`                                   | Closes the current browser tab.                            |
+# | Quit Browser                      | `driver.quit()`                                    | Closes all browser windows and ends the WebDriver session. |
+# | Set Window Size                   | `driver.set_window_size(1024, 768)`                | Sets the browser window size.                              |
+# | Set Window Position               | `driver.set_window_position(100, 100)`             | Moves the browser window.                                  |
+# | Get Window Size                   | `driver.get_window_size()`                         | Returns the current window size.                           |
+# | Get Window Position               | `driver.get_window_position()`                     | Returns the current window position.                       |
+# | Get Window Handle                 | `driver.current_window_handle`                     | Returns the current window handle.                         |
+# | Get All Window Handles            | `driver.window_handles`                            | Returns all open window handles.                           |
+# | Switch Window                     | `driver.switch_to.window(handle)`                  | Switches to another browser window or tab.                 |
+# | Get Cookies                       | `driver.get_cookies()`                             | Returns all cookies.                                       |
+# | Add Cookie                        | `driver.add_cookie({"name":"test","value":"123"})` | Adds a cookie.                                             |
+# | Delete Cookie                     | `driver.delete_cookie("test")`                     | Deletes a specific cookie.                                 |
+# | Delete All Cookies                | `driver.delete_all_cookies()`                      | Deletes all cookies.                                       |
+# | Execute JavaScript                | `driver.execute_script("window.scrollTo(0,500);")` | Executes JavaScript.                                       |
+# | Take Screenshot                   | `driver.save_screenshot("page.png")`               | Captures a screenshot.                                     |
+# | Get Browser Logs *(if supported)* | `driver.get_log("browser")`                        | Retrieves browser console logs.                            |
+# | Implicit Wait                     | `driver.implicitly_wait(10)`                       | Sets a global wait time for elements._                     |
+
