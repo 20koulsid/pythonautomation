@@ -7,8 +7,7 @@ class DemoBrowserCommands:
         driver = webdriver.Chrome()
 
         # Open URL
-        driver.get("https://www.amazon.in")
-
+        driver.get("https://www.amazon.in") 
 
 demo = DemoBrowserCommands()
 demo.browser_commands()

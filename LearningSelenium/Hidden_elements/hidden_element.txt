@@ -1,0 +1,15 @@
+| Method           | Checks                                                    | Returns          |
+| ---------------- | --------------------------------------------------------- | ---------------- |
+| `is_displayed()` | Whether the element is visible                            | `True` / `False` |
+| `is_enabled()`   | Whether the element can be interacted with (not disabled) | `True` / `False` |
+
+A hidden element is an HTML element that exists in the page's DOM but is not visible to the user.
+
+Selenium can usually find hidden elements, but it cannot interact with them (click or type)
+until they become visible.
+
+Basically the element will be there in dom but it will be hidden check that we will user
+is_displayed
+
+Second case is if it is completely hidden from dom also like if we add the age on any travel website
+for e.g make my trip > hotels > select children/adult then after adding there will section visible

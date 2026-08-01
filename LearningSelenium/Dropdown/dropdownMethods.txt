@@ -1,0 +1,15 @@
+| Method                       | Purpose                                          |
+| ---------------------------- | ------------------------------------------------ |
+| `select_by_visible_text()`   | Select by visible text                           |
+| `select_by_value()`          | Select by `value` attribute                      |
+| `select_by_index()`          | Select by index                                  |
+
+| `deselect_all()`             | Remove all selections (multi-select only)        |
+| `deselect_by_index()`        | Deselect by index                                |
+| `deselect_by_value()`        | Deselect by value                                |
+| `deselect_by_visible_text()` | Deselect by visible text                         |
+
+| `options`                    | Get all dropdown options                         |
+| `first_selected_option`      | Get the first selected option                    |
+| `all_selected_options`       | Get all selected options (multi-select)          |
+| `is_multiple`                | Check if the dropdown allows multiple selections |

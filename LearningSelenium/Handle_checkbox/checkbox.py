@@ -1,25 +1,21 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from LearningSelenium.HandleAutoSuggestion.practice import a
 
-
-class DemoFindElementByTagName():
-    def locate_by_tag_name(self):
+class Verify_Checkbox:
+    def checkbox(self):
         driver = webdriver.Chrome()
-        driver.get("https://www.amazon.in")
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.TAG_NAME, "input"))
+        driver.get("https://www.qa-practice.com/elements/checkbox/mult_checkbox")
+        wait = WebDriverWait(driver, 10)
+        checkbox_element = wait.until(
+            EC.element_to_be_clickable(
+                (By.XPATH,"//input[@id='id_checkboxes_0']")
+            )
         )
-        lista = driver.find_elements(By.TAG_NAME, "input")
-        print(len(lista))
-        for input_element in lista:
-            print("ID:", input_element.get_attribute("id"))
-            print("Name:", input_element.get_attribute("name"))
-            print("Type:", input_element.get_attribute("type"))
-            print("Value:", input_element.get_attribute("value"))
-            print("Placeholder:", input_element.get_attribute("placeholder"))
-        time.sleep(4)
-findbyid = DemoFindElementByTagName()
-findbyid.locate_by_tag_name()
+        print("Displayed:", checkbox_element.is_displayed())
+        print("Enabled:", checkbox_element.is_enabled())
+        checkbox_element.click()
+checkbox = Verify_Checkbox()
+checkbox.checkbox()

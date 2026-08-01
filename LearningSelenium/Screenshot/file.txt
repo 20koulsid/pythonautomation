@@ -1,0 +1,7 @@
+| Method                       | Purpose                         | Most Used?           |
+| ---------------------------- | ------------------------------- | -------------------- |
+| `save_screenshot()`          | Save screenshot to a file       | ✅ Yes                |
+| `get_screenshot_as_file()`   | Save screenshot to a file       | ✅ Sometimes          |
+| `get_screenshot_as_png()`    | Get screenshot as PNG bytes     | Used in reporting    |
+| `get_screenshot_as_base64()` | Get screenshot as Base64 string | Used in APIs/reports |
+| `element.screenshot()`       | Capture only one element        | ✅ Very useful        |
