@@ -1,12 +1,11 @@
 <div align="center">
-# 🐍 Python Automation Playground
+# 🐍 pythonautomation
  
-### Hands-on notes, scripts & projects from learning Python Automation, Selenium & Pytest
+### My personal learning log for Python, Selenium & Pytest — built one topic at a time
  
-![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-4.x-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-![Pytest](https://img.shields.io/badge/Pytest-7.x-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-WebDriver-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Pytest](https://img.shields.io/badge/Pytest-Framework-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Learning-orange?style=for-the-badge)
  
 </div>
@@ -14,98 +13,115 @@
  
 ## 📖 About
  
-This repository is a personal knowledge base built while learning **Python automation**, **Selenium WebDriver**, and **Pytest**. It contains code snippets, mini-projects, and exercises organized by topic — useful both as a learning log and a quick-reference cheat sheet.
+This repo is where I practice and document what I'm learning across three areas: **core Python**, **Selenium WebDriver**, and **Pytest**. Each area has its own folder with topic-wise scripts, plus a `PythonProject1` folder reserved for a bigger project once the fundamentals are solid.
  
 ---
  
 ## 📑 Table of Contents
  
-- [About](#-about)
-- [Tech Stack](#-tech-stack)
 - [Folder Structure](#-folder-structure)
-- [Topics Covered](#-topics-covered)
+- [LearningPython](#-learningpython)
+- [LearningSelenium](#-learningselenium)
+- [LearningPyTest](#-learningpytest)
+- [PythonProject1](#-pythonproject1)
 - [Getting Started](#-getting-started)
 - [Running Tests](#-running-tests)
-- [Sample Snippet](#-sample-snippet)
+- [Sample: Pytest Fixtures & Markers](#-sample-pytest-fixtures--markers)
 - [Roadmap](#-roadmap)
-- [Resources](#-resources)
-- [License](#-license)
----
- 
-## 🛠 Tech Stack
- 
-| Category      | Tools / Libraries              |
-|----------------|--------------------------------|
-| Language       | Python 3.10+                   |
-| Automation     | Selenium WebDriver             |
-| Testing        | Pytest, pytest-html, pytest-xdist |
-| Env Management | venv / pip                     |
-| Browser Driver | webdriver-manager              |
-| Version Control| Git & GitHub                   |
- 
 ---
  
 ## 📂 Folder Structure
  
 ```
-python-automation-playground/
+pythonautomation/
 │
-├── selenium_basics/
-│   ├── 01_open_browser.py
-│   ├── 02_locators.py
-│   └── 03_forms_and_waits.py
+├── LearningPython/
+│   └── (core Python concepts, topic-wise scripts)
 │
-├── pytest_basics/
-│   ├── test_fixtures.py
-│   ├── test_parametrize.py
-│   └── test_markers.py
+├── LearningSelenium/
+│   └── (Selenium WebDriver concepts, topic-wise scripts)
 │
-├── projects/
-│   └── login_automation_suite/
+├── LearningPyTest/
+│   ├── conftest.py
+│   ├── test_additems.py
+│   ├── test_cart.py
+│   ├── test_checkout.py
+│   ├── test_login.py
+│   ├── test_logout.py
+│   └── practice_questions/   # Q1–Q10 combining topics above
 │
-├── utils/
-│   └── helpers.py
+├── PythonProject1/
+│   └── (reserved for a full end-to-end project — coming soon)
 │
-├── requirements.txt
+├── __init__.py
+├── .gitattributes
 └── README.md
 ```
  
 ---
  
-## ✅ Topics Covered
+## 🔹 LearningPython
  
-### 🔹 Python Automation
-- [x] File & folder automation
-- [x] Working with `os`, `shutil`, `pathlib`
-- [x] Scheduling scripts (`schedule`, `cron`)
-- [x] Sending automated emails/reports
-### 🔹 Selenium
-- [x] Browser setup & WebDriver basics
-- [x] Locator strategies (`id`, `xpath`, `css selector`)
-- [x] Explicit vs Implicit waits
-- [x] Handling forms, dropdowns, alerts
-- [x] Page Object Model (POM)
-### 🔹 Pytest
-- [x] Test discovery & naming conventions
-- [x] Fixtures & `conftest.py`
-- [x] Parametrized tests
-- [x] Markers & custom markers
-- [x] HTML/Allure test reports
+Core language concepts practiced here:
+ 
+| Topic | Topic | Topic |
+|---|---|---|
+| Arguments | Built-in functions | Classes & objects |
+| Date & time | Exception handling | File I/O |
+| String formatting | Lists & modules | Operator precedence |
+| String slicing | Strings | Variable scope |
+| openpyxl (Excel automation) | Reading `.xls` files | Writing `.xls` files |
+| Test data generation | | |
+ 
+---
+ 
+## 🔹 LearningSelenium
+ 
+Selenium WebDriver concepts practiced here:
+ 
+| Topic | Topic | Topic |
+|---|---|---|
+| Element attributes | Browser commands | Calendars |
+| Dropdowns | Multi-select lists | Radio buttons |
+| Checkboxes | Auto-suggestion handling | Hidden elements |
+| Element enabled checks | Get text of element | Web element & DOM |
+| Handling alerts | Handling frames | JavaScript executor |
+| List of web elements | Mouse actions | Multi-window handling |
+| Screenshots | Sliders | Explicit/implicit waits |
+| Selenium + Pytest integration | | |
+ 
+---
+ 
+## 🔹 LearningPyTest
+ 
+Pytest concepts, practiced through a small mock e-commerce test suite (login, logout, cart, add items, checkout):
+ 
+- **Fixtures** — `conftest.py` with an `autouse`, function-scoped `setUp` fixture that wraps every test (`Launch browser → Login → ... → Logoff → Close browser`)
+- **Markers** — custom markers like `@pytest.mark.sanity`, plus built-ins `@pytest.mark.skip` and `@pytest.mark.xfail`
+- **Assertions** — basic `assert` checks
+- **Test organization** — one file per flow: `test_login.py`, `test_logout.py`, `test_cart.py`, `test_additems.py`, `test_checkout.py`
+- **Practice questions** — 10 practice problems (`practice_questions/`) combining all of the above
+---
+ 
+## 🔹 PythonProject1
+ 
+Reserved for a full, end-to-end automation project once the fundamentals above are complete — not started yet.
+ 
 ---
  
 ## 🚀 Getting Started
  
 ```bash
 # Clone the repo
-git clone https://github.com/<your-username>/python-automation-playground.git
-cd python-automation-playground
+git clone https://github.com/<your-username>/pythonautomation.git
+cd pythonautomation
  
 # Create a virtual environment
 python -m venv venv
 source venv/bin/activate      # On Windows: venv\Scripts\activate
  
 # Install dependencies
-pip install -r requirements.txt
+pip install pytest selenium openpyxl webdriver-manager
 ```
  
 ---
@@ -113,60 +129,63 @@ pip install -r requirements.txt
 ## 🧪 Running Tests
  
 ```bash
-# Run all tests
-pytest
- 
-# Run with verbose output
+# Run the full pytest suite
+cd LearningPyTest
 pytest -v
  
-# Run a specific test file
-pytest pytest_basics/test_fixtures.py
+# Run only sanity-marked tests
+pytest -m sanity
  
-# Generate an HTML report
-pytest --html=report.html
+# Run a specific test file
+pytest test_login.py
 ```
  
 ---
  
-## 💡 Sample Snippet
+## 💡 Sample: Pytest Fixtures & Markers
+ 
+From `LearningPyTest/conftest.py` — an autouse fixture that runs setup/teardown around every test:
  
 ```python
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+import pytest
  
-driver = webdriver.Chrome()
-driver.get("https://example.com")
+@pytest.fixture(scope="function", autouse=True)
+def setUp():
+    print("Launch browser")
+    print("Login successful")
+    print("Browse setup")
+    yield
+    print("Logoff successful")
+    print("close browser")
+```
  
-element = driver.find_element(By.TAG_NAME, "h1")
-print(element.text)
+And from `test_logout.py` — using markers to control test behavior:
  
-driver.quit()
+```python
+import pytest
+ 
+@pytest.mark.sanity
+def test_logout():
+    print("Logout successful")
+ 
+@pytest.mark.skip
+def test_calculation1():
+    assert 2 * 2 == 8
+ 
+@pytest.mark.xfail
+def test_calculation2():
+    assert 2 - 2 == 8
 ```
  
 ---
  
 ## 🗺 Roadmap
  
-- [ ] Add Page Object Model project (real-world login flow)
-- [ ] Integrate Allure reporting
-- [ ] Add CI pipeline with GitHub Actions
-- [ ] Add data-driven testing examples
----
- 
-## 📚 Resources
- 
-- [Selenium Docs](https://www.selenium.dev/documentation/)
-- [Pytest Docs](https://docs.pytest.org/)
-- [Real Python – Automation](https://realpython.com/)
----
- 
-## 📄 License
- 
-This project is licensed under the [MIT License](LICENSE).
- 
+- [ ] Build out `PythonProject1` as a real end-to-end project (e.g. a Page Object Model test suite)
+- [ ] Add data-driven tests using `openpyxl`/Excel input
+- [ ] Add HTML/Allure test reports for the Pytest suite
+- [ ] Add a GitHub Actions CI workflow to run tests on push
 <div align="center">
-⭐ If this helped you, consider giving the repo a star!
+⭐ A living repo — updated as I learn more.
  
 </div>
-
-
