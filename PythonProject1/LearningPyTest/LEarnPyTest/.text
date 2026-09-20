@@ -1,0 +1,33 @@
+@pytest.mark.sanity
+cd /d D:\project name\foldername2\..
+
+m -> mark
+pytest -vm regression
+pytest -vm sanity(whichever name we have given -> as custom markers)
+pytest -vm filename
+pytest -s filename
+
+| Marker                        | Purpose                                         | Example                                        |
+| ----------------------------- | ----------------------------------------------- | ---------------------------------------------- |
+| `@pytest.mark.skip`           | Always skip a test                              | `@pytest.mark.skip(reason="Not ready")`        |
+| `@pytest.mark.skipif`         | Skip based on a condition                       | `@pytest.mark.skipif(sys.platform == "win32")` |
+| `@pytest.mark.xfail`          | Test is expected to fail                        | `@pytest.mark.xfail`                           |
+| `@pytest.mark.parametrize`    | Run test with multiple data sets                | `@pytest.mark.parametrize("x", [1,2,3])`       |
+| `@pytest.mark.usefixtures`    | Use a fixture without passing it as an argument | `@pytest.mark.usefixtures("driver")`           |
+| `@pytest.mark.filterwarnings` | Control warnings for a test                     | `@pytest.mark.filterwarnings("ignore")`        |
+
+
+Fixtures in pytest ->
+1-> Arrange -> launch the app/ browser
+2-> Act -> i have the product and i need to add in card or act
+3-> Assert -> once act is done verify the act that is done successfully what error we got
+4-> Cleanup -> once the result/ test has been done we want to reset the app again so that we can start over again
+
+
+| Scope      | Fixture runs                       |
+| ---------- | ---------------------------------- |
+| `function` | Before/after **each test**         |
+| `class`    | Before/after **each test class**   |
+| `module`   | Before/after **each `.py` file**   |
+| `package`  | Before/after **each package**      |
+| `session`  | Once for the **entire pytest run** |

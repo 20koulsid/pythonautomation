@@ -1,0 +1,91 @@
+Exercise 1
+Create conftest.py with a fixture named setup that prints:
+Setup executed
+Use it in test_basic.py and print:
+Test executed
+
+Exercise 2
+Create a fixture named setup using yield.
+Expected output:
+Setup
+Test
+Teardown
+
+Exercise 3
+Create a fixture named username that returns:
+Sidharth
+Use the fixture in a test and print the returned value.
+
+Exercise 4
+Create a fixture named numbers that returns:
+[10, 20, 30, 40, 50]
+Write a test that verifies:
+len(numbers) == 5
+
+Exercise 5
+Create a fixture named login_data that returns:
+{
+    "username": "admin",
+    "password": "admin123"
+}
+Write a test that verifies both values.
+
+Exercise 6
+Create a fixture named setup and use it in three different test functions.
+Each test should print a different message.
+
+Exercise 7
+Create a fixture with:
+@pytest.fixture(scope="function")
+Use it in three tests.
+Print from the fixture and from each test.
+
+Exercise 8
+Create a fixture with:
+@pytest.fixture(scope="module")
+Use it in three tests.
+Print from the fixture and from each test.
+
+Exercise 9
+Create a Selenium driver fixture in conftest.py.
+Requirements:
+Chrome opens
+↓
+maximize window
+↓
+yield driver
+↓
+test executes
+↓
+driver.quit()
+
+Create one test that opens:
+
+https://www.amazon.in
+
+and verifies the title.
+
+Exercise 10 — Challenge
+
+Create two fixtures in conftest.py:
+
+driver
+login
+
+driver should:
+
+Open Chrome
+Maximize
+Yield driver
+Quit browser
+
+login should:
+
+Accept driver
+Open Amazon
+Print "Login setup"
+
+Create two tests that use login.
+
+test_homepage
+test_search
