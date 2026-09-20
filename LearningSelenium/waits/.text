@@ -1,0 +1,58 @@
+| Feature                 | **Implicit Wait**                     | **Explicit Wait**                        | **Fluent Wait**                                                         |
+| ----------------------- | ------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------- |
+| **Definition**          | Global wait for finding elements      | Wait for a **specific condition**        | Advanced explicit wait with more control                                |
+| **Scope**               | Applies to all `find_element()` calls | Specific element/condition               | Specific element/condition                                              |
+| **Class / Method**      | `driver.implicitly_wait()`            | `WebDriverWait()`                        | `WebDriverWait()` with configuration                                    |
+| **Syntax**              | `driver.implicitly_wait(10)`          | `WebDriverWait(driver, 10).until(...)`   | `WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=[...])` |
+| **Maximum timeout**     | ✅                                     | ✅                                        | ✅                                                                       |
+| **Specific condition**  | ❌                                     | ✅                                        | ✅                                                                       |
+| **Polling control**     | ❌                                     | Default polling                          | ✅ Custom polling                                                        |
+| **Exception handling**  | ❌                                     | Can configure                            | ✅ Can configure                                                         |
+| **Custom condition**    | ❌                                     | ✅                                        | ✅                                                                       |
+| **Expected Conditions** | ❌                                     | ✅                                        | ✅                                                                       |
+| **Global**              | ✅                                     | ❌                                        | ❌                                                                       |
+| **Flexibility**         | Low                                   | High                                     | Very High                                                               |
+| **Complex dynamic UI**  | Not ideal                             | ✅ Good                                   | ✅ Very good                                                             |
+| **Example**             | `implicitly_wait(10)`                 | `until(EC.element_to_be_clickable(...))` | `poll_frequency=2` + custom/expected condition                          |
+| **Main purpose**        | Wait for element lookup               | Wait for a condition                     | Control how explicit waiting behaves                                    |
+
+| Wait         | Think of it as                              | Example                                                        |
+| ------------ | ------------------------------------------- | -------------------------------------------------------------- |
+| **Implicit** | **Wait for element**                        | `implicitly_wait(10)`                                          |
+| **Explicit** | **Wait for condition**                      | `until(EC.visibility_of_element_located(...))`                 |
+| **Fluent**   | **Wait + polling + exceptions + condition** | `WebDriverWait(..., poll_frequency=2, ignored_exceptions=...)` |
+
+
+| **Implicit**                         | **Explicit**                                                                                                   | **Fluent**                                                                                                  |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `python driver.implicitly_wait(10) ` | `python wait = WebDriverWait(driver, 10) button = wait.until( EC.element_to_be_clickable((By.ID, "login")) ) ` | `python wait = WebDriverWait( driver, 20, poll_frequency=2, ignored_exceptions=[NoSuchElementException] ) ` |
+
+
+
+
+
+
+                    Selenium Waits — Mapping
+
+                         SELENIUM WAITS
+                              │
+             ┌────────────────┼────────────────┐
+             │                │                │
+             ▼                ▼                ▼
+        IMPLICIT          EXPLICIT          FLUENT
+          WAIT              WAIT             WAIT
+             │                │                │
+             ▼                ▼                ▼
+       Global wait      Specific wait     Specific wait
+       for element      for condition     for condition
+             │                │                │
+             ▼                ▼                ▼
+   driver.implicitly_   WebDriverWait()   FluentWait()
+        wait()                │                │
+                              ▼                ▼
+                         until(condition)  polling + ignored
+
+
+
+
+

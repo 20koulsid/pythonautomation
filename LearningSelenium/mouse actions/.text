@@ -1,0 +1,29 @@
+MOUSE ACTIONS ->
+| Method                          | What it does                    | Example                                                          |
+| ------------------------------- | ------------------------------- | ---------------------------------------------------------------- |
+| `click()`                       | Left click                      | `actions.click(element).perform()`                               |
+| `context_click()`               | Right click                     | `actions.context_click(element).perform()`                       |
+| `double_click()`                | Double left click               | `actions.double_click(element).perform()`                        |
+| `click_and_hold()`              | Click and hold                  | `actions.click_and_hold(element).perform()`                      |
+| `release()`                     | Release mouse button            | `actions.release().perform()`                                    |
+| `move_to_element()`             | Move/hover over element         | `actions.move_to_element(element).perform()`                     |
+| `move_by_offset()`              | Move mouse by X/Y pixels        | `actions.move_by_offset(100, 50).perform()`                      |
+| `move_to_element_with_offset()` | Move to position inside element | `actions.move_to_element_with_offset(element, 20, 10).perform()` |
+| `drag_and_drop()`               | Drag element to another element | `actions.drag_and_drop(source, target).perform()`                |
+| `drag_and_drop_by_offset()`     | Drag element by X/Y             | `actions.drag_and_drop_by_offset(element, 100, 50).perform()`    |
+
+
+| Feature               | `.click()` | `ActionChains`      |
+| --------------------- | ---------- | ------------------- |
+| Normal left click     | ✅          | ✅                   |
+| Right click           | ❌          | ✅                   |
+| Double click          | ❌          | ✅                   |
+| Mouse hover           | ❌          | ✅                   |
+| Click + hold          | ❌          | ✅                   |
+| Drag & drop           | ❌          | ✅                   |
+| Move mouse            | ❌          | ✅                   |
+| Keyboard combinations | ❌          | ✅                   |
+| Complex sequences     | ❌          | ✅                   |
+| Simple button click   | ⭐ Best     | Usually unnecessary |
+
+right click is used where multiple options are there

@@ -1,0 +1,14 @@
+| Concept            | Pytest                                |
+| ------------------ | ------------------------------------- |
+| Type               | Python testing framework              |
+| Purpose            | Write, execute and manage tests       |
+| File naming        | `test_*.py` or `*_test.py`            |
+| Test naming        | Functions starting with `test_`       |
+| Assertions         | Python `assert`                       |
+| Fixtures           | Setup/teardown and reusable test data |
+| Parameterization   | Run same test with multiple data sets |
+| Selenium support   | ✅                                     |
+| API testing        | ✅                                     |
+| DB testing         | ✅                                     |
+| Reporting          | Via plugins                           |
+| Parallel execution | Via plugins such as `pytest-xdist`    |

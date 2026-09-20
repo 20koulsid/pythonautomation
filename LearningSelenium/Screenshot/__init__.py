@@ -8,43 +8,74 @@ from selenium.webdriver.support import expected_conditions as EC
 class SsElement:
     def ss_element(self):
         driver = webdriver.Chrome()
-        try:
-            driver.get("https://www.makemytrip.com/")
-            wait = WebDriverWait(driver, 10)
-
-            wait.until(
-                EC.element_to_be_clickable(
-                    (By.XPATH, "//span[@class='commonModal__close']")
-                )
-            ).click()
-
-            bot_popup = wait.until(
-                EC.element_to_be_clickable(
-                    (By.XPATH,
-                     "//div[contains(@class,'tp-dt-enhanced-floating-cta-wrapper')]"
-                     "//div[contains(@class,'tp-dt-enhanced-floating-cta')]//div[3]")
-                )
+        driver.get("https://www.makemytrip.com")
+        wait = WebDriverWait(driver, 10)
+        first_popup_btn = wait.until(
+            EC.element_to_be_clickable(
+                (By.XPATH, "//span[@class='commonModal__close']")
             )
-            bot_popup.click()
-
-            nav_bar = wait.until(
-                EC.element_to_be_clickable(
-                    (By.XPATH, "(//div[@class='fsw_inner returnPersuasion'])[1]")
-                )
+        )
+        first_popup_btn.click()
+        bot_close_btn = wait.until(
+            EC.element_to_be_clickable(
+                (By.XPATH, "//div[contains(@class,'tp-dt-enhanced"
+                           "-floating-cta-wrapper')]//div[contains(@class,'tp-dt-enhanced-floating-cta')"
+                           "]//div[3]")
             )
+        )
+        bot_close_btn.click()
 
-            if driver.title == "One Way":
-                if not nav_bar.screenshot("./test.png"):
-                    print("Element screenshot failed")
-                if not driver.save_screenshot("./test_full.png"):
-                    print("Full page screenshot failed")
-            else:
-                print(f"Unexpected title: {driver.title}")
-
-        finally:
-            driver.quit()
-
-
-if __name__ == "__main__":
-    ss_capture = SsElement()
-    ss_capture.ss_element()
+        my_trips_btn = wait.until(
+            EC.presence_of_element_located(
+                (By.XPATH,"//li[@class='makeFlex hrtlCenter quickAccessTile lhMyTrips']")
+            )
+        )
+        title = my_trips_btn.get_attribute("title")
+        print(title)
+        if title != "My Trips":
+            my_trips_btn.screenshot("./test.png")
+            print("Screenshot captured")
+        else:
+            print("Title doesn't match. Screenshot failed")
+screenshot = SsElement()
+screenshot.ss_element()
+#         try:
+#             driver.get("https://www.makemytrip.com/")
+#             wait = WebDriverWait(driver, 10)
+#
+#             wait.until(
+#                 EC.element_to_be_clickable(
+#                     (By.XPATH, "//span[@class='commonModal__close']")
+#                 )
+#             ).click()
+#
+#             bot_popup = wait.until(
+#                 EC.element_to_be_clickable(
+#                     (By.XPATH,
+#                      "//div[contains(@class,'tp-dt-enhanced-floating-cta-wrapper')]"
+#                      "//div[contains(@class,'tp-dt-enhanced-floating-cta')]//div[3]")
+#                 )
+#             )
+#             bot_popup.click()
+#
+#             nav_bar = wait.until(
+#                 EC.element_to_be_clickable(
+#                     (By.XPATH, "(//div[@class='fsw_inner returnPersuasion'])[1]")
+#                 )
+#             )
+#
+#             if driver.title == "One Way":
+#                 if not nav_bar.screenshot("./test.png"):
+#                     print("Element screenshot failed")
+#                 if not driver.save_screenshot("./test_full.png"):
+#                     print("Full page screenshot failed")
+#             else:
+#                 print(f"Unexpected title: {driver.title}")
+#
+#         finally:
+#             driver.quit()
+#
+#
+# if __name__ == "__main__":
+#     ss_capture = SsElement()
+#     ss_capture.ss_element()
